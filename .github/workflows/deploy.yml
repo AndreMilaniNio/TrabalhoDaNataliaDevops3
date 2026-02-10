@@ -89,3 +89,9 @@ jobs:
             exit 1
           fi
           echo "Footer com nome do aluno encontrado!"
+
+      # Passo 10: Adicionando "assinatura" se tudo correr bem
+      - name: Mensagem final de auditoria
+        run: |
+          ALUNO="André Milani"
+          echo "O código do aluno $ALUNO foi auditado, está seguindo as normas corretas e está pronto para o deploy!"
