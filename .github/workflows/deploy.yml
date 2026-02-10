@@ -35,7 +35,7 @@ jobs:
       - name: Verificar pasta src
         run: |
           if [ ! -d "src" ]; then
-            echo "Pasta 'src' não encontrada""
+            echo "Pasta 'src' não encontrada"
             exit 1
           fi
           echo "Pasta 'src' encontrada!"
@@ -59,7 +59,7 @@ jobs:
 
       - name: Validar sintaxe HTML
         run: htmlhint src/index.html
-        
+
       # Passo 5: Configura o ambiente para o GitHub Pages
       - name: Setup Pages
         uses: actions/configure-pages@v4
