@@ -84,7 +84,7 @@ jobs:
       # Passo 9: Verificando se meu nome está no footer
       - name: Verificar footer com nome do aluno
         run: |
-          if ! grep -iPzo "<footer[\s\S]*?andre\s+milani[\s\S]*?</footer>" src/index.html; then
+          if ! grep -Pzo "<footer[\s\S]*?andr[eé]\s+milani[\s\S]*?</footer>" src/index.html; then
             echo "Erro: O HTML deve conter uma tag <footer> com o nome do aluno."
             exit 1
           fi
