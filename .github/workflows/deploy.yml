@@ -50,11 +50,16 @@ jobs:
           echo "Arquivo CSS encontrado!"
 
       # Passo 4: valida sintaxe HTML
-      - name: Validar sintaxe HTML
-        uses: Cyb3r-Jak3/htmlhint-action@v1
-        with:
-          target_pattern: "src/index.html"
+      # - name: Validar sintaxe HTML
+      #   uses: Cyb3r-Jak3/htmlhint-action@v1
+      #   with:
+      #     target_pattern: "src/index.html"
+      - name: Instalar HTMLHint
+        run: npm install -g htmlhint
 
+      - name: Validar sintaxe HTML
+        run: htmlhint src/index.html
+        
       # Passo 5: Configura o ambiente para o GitHub Pages
       - name: Setup Pages
         uses: actions/configure-pages@v4
