@@ -76,7 +76,16 @@ jobs:
         with:
           path: "src" # Define que o site está na raiz do projeto
 
-      # Passo 5: Publica o site oficialmente
+      # Passo 8: Publica o site oficialmente
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+      # Passo 9: Verificando se meu nome está no footer
+      - name: Verificar footer com nome do aluno
+        run: |
+          if ! grep -i "<footer>.*andre milani.*</footer>" src/index.html; then
+            echo "Erro: O HTML deve conter uma tag <footer> com o nome do aluno."
+            exit 1
+          fi
+          echo "Footer com nome do aluno encontrado!"
